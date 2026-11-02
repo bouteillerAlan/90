@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-type CButton = {
+type CCard = {
   children: ReactNode;
 }
 
-function Card(props: CButton) {
+function Card(props: CCard) {
   return (
     <div className="card">
       {props.children}
