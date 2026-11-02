@@ -1,0 +1,80 @@
+:root {
+  --baseH: 100px;
+
+  --red: #d70000;
+  --orange: #ff5f00;
+  --yellow: #ffaf00;
+  --peach: #ffd7af;
+  --dark-red: #2a1408;
+
+  --text: var(--dark-red);
+  --background: #fff;
+
+  --elem-background: var(--peach);
+
+  --border: var(--dark-red);
+  --shadow: var(--dark-red);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--background);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: var(--peach);
+    --background: #16100C;
+    --border: var(--peach);
+    --shadow: var(--red);
+    --elem-background: #211811;
+  }
+}
+
+/* Button */
+button {
+  color: #000;
+  margin: none;
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0 var(--shadow);
+  margin: 3px 0; /* for a better visual alignment of other element */
+  width: var(--baseH);
+  height: calc(var(--baseH) / 3);
+}
+button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 var(--shadow);
+}
+button.orange {
+  background-color: var(--orange);
+}
+button.red {
+  background-color: var(--red);
+}
+button.peach {
+  background-color: var(--peach);
+}
+button.yellow {
+  background-color: var(--yellow);
+}
+
+/* card */
+.card {
+  background: var(--background);
+  border: 1px solid var(--shadow);
+  box-shadow: 3px 3px 0 var(--shadow);
+  margin: 3px 0;
+}
+
