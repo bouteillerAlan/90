@@ -1,11 +1,14 @@
-type CButton = {
+import type { JSX } from "react";
+import { eColors } from "../types/enums";
+
+type tButton = {
   text: string;
-  color: "orange" | "yellow" | "peach" | "yellow" | undefined;
+  color: eColors | undefined;
 }
 
-function Button(props: CButton) {
+function Button(props: tButton): JSX.Element {
   let color = props.color;
-  if (!color) color = "orange";
+  if (!color || !Object.values(eColors).includes(color)) color = eColors.ORANGE;
   return <button className={`${color}`}>{props.text}</button>
 }
 

@@ -78,3 +78,8 @@ button.yellow {
   margin: 3px 0;
 }
 
+/* progress */
+progress {
+  background-color: var(--background);
+}
+

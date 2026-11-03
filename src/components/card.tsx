@@ -1,10 +1,10 @@
-import type { ReactNode } from "react";
+import type { ReactNode, JSX } from "react";
 
-type CCard = {
+type tCard = {
   children: ReactNode;
 }
 
-function Card(props: CCard) {
+function Card(props: tCard): JSX.Element {
   return (
     <div className="card">
       {props.children}
