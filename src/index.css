@@ -5,6 +5,7 @@
   --orange: #ff5f00;
   --yellow: #ffaf00;
   --peach: #ffd7af;
+  --gradient: linear-gradient(90deg, var(--red), var(--orange), var(--yellow), var(--peach));
   --dark-red: #2a1408;
 
   --text: var(--dark-red);
@@ -79,7 +80,19 @@ button.yellow {
 }
 
 /* progress */
-progress {
-  background-color: var(--background);
+.pb {
+  background: var(--gradient);
+  height: 20px;
+  width: 200px;
+  display: flex;
+}
+.pb-progress-fg {
+  background: transparent;
+  height: 100%;
+}
+.pb-progress-bg {
+  background: var(--background);
+  height: 100%;
+  flex: 1;
 }
 

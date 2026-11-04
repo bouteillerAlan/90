@@ -16,7 +16,10 @@ function App() {
         <h1>test card</h1>
       </Card>
 
-      <ProgressBar step={25}/>
+      <ProgressBar
+        step={74}
+        border="1px solid black"
+      />
 
     </div>
   )

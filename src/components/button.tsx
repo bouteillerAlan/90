@@ -3,7 +3,7 @@ import { eColors } from "../types/enums";
 
 type tButton = {
   text: string;
-  color: eColors | undefined;
+  color?: eColors;
 }
 
 function Button(props: tButton): JSX.Element {
