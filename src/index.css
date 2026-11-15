@@ -40,6 +40,19 @@
   }
 }
 
+/* main container */
+.container {
+  padding-top: 20px; /* same has the overall progress bar */
+}
+
+/* virtual cursor */
+.cursor {
+  position: absolute;
+  border: 1px solid var(--red);
+  height: 10px;
+  width: 10px;
+}
+
 /* Button */
 button {
   color: #000;
@@ -53,6 +66,7 @@ button {
 button:hover {
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0 var(--shadow);
+  cursor: pointer;
 }
 button:active {
   transform: translate(3px, 3px);

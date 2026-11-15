@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type CSSProperties } from "react";
 import type { JSX } from "react/jsx-runtime";
 
 type progress = {
@@ -6,6 +6,7 @@ type progress = {
   label?: string;
   id?: number | string;
   border?: string;
+  style?: CSSProperties;
 }
 
 function ProgressBar(props: progress): JSX.Element {
@@ -16,14 +17,15 @@ function ProgressBar(props: progress): JSX.Element {
   if (props.step > 100) step = 100;
   if (props.step < 0) step = 0;
 
-  // todo: add style > border: 1px solid black;
-  //                 > width on pg-progress-fg that represent the progress
-
   return (
     <div>
-      {props.label && props.label.trim() && <label htmlFor={`p${id}`}>{props.label}</label>}
-      <br/>
-      <div id={`p${id}`} className="pb" style={{ border: props.border }}>
+      {props.label && props.label.trim() &&
+        <span>
+          <label htmlFor={`p${id}`}>{props.label}</label>
+          <br/>
+        </span>
+      }
+      <div id={`p${id}`} className="pb" style={{ border: props.border, ...props.style }}>
         <div className="pb-progress-fg" style={{ width: `${step}%` }}></div>
         <div className="pb-progress-bg"></div>
       </div>
