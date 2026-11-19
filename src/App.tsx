@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import ProgressBar from "./components/progressBar"
+import Menu from "./components/menu";
 
 function App() {
   const [spyStep, setSpyStep] = useState<number>(0);
@@ -30,10 +31,8 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("scroll", () => spyScroll());
-    document.addEventListener("pointermove", (event) => spyMouse(event));
     return () => {
       document.removeEventListener("scroll", () => spyScroll());
-      document.removeEventListener("pointermove", (event) => spyMouse(event));
     }
   }, [])
 
@@ -43,9 +42,9 @@ function App() {
         step={spyStep}
         style={{ width: "100%", top: 0, position: "fixed" }}
       />
-      <div ref={cursorRef} className="cursor"></div>
+      {/* <div ref={cursorRef} className="cursor"></div> */}
       <div className="container">
-        {Array(320).fill(1).map((_v, i) => <div>{i}</div>)}
+        <Menu/>
       </div>
     </div>
   )

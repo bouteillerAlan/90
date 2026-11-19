@@ -20,7 +20,7 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  color-scheme: light dark;
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,19 +30,20 @@
   color: var(--text);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: var(--peach);
-    --background: #16100C;
-    --border: var(--peach);
-    --shadow: var(--red);
-    --elem-background: #211811;
-  }
+:root[data-theme="dark"] {
+  --text: var(--peach);
+  --background: #16100C;
+  --border: var(--peach);
+  --shadow: var(--red);
+  --elem-background: #211811;
+  color-scheme: dark;
 }
 
 /* main container */
 .container {
   padding-top: 20px; /* same has the overall progress bar */
+  margin: 0 auto;
+  width: 90%;
 }
 
 /* virtual cursor */
@@ -51,6 +52,21 @@
   border: 1px solid var(--red);
   height: 10px;
   width: 10px;
+}
+
+/* menu */
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu .logo {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 1rem;
+}
+.menu button {
+  margin-right: 1rem;
+  color: var(--dark-red);
 }
 
 /* Button */
@@ -84,6 +100,9 @@ button.peach {
 button.yellow {
   background-color: var(--yellow);
 }
+button.darkRed {
+  background-color: var(--dark-red);
+}
 
 /* card */
 .card {
@@ -110,3 +129,19 @@ button.yellow {
   flex: 1;
 }
 
+/* text color */
+.forange {
+  color: var(--orange) !important;
+}
+.fred {
+  color: var(--red) !important;
+}
+.fpeach {
+  color: var(--peach) !important;
+}
+.fyellow {
+  color: var(--yellow) !important;
+}
+.fdarkRed {
+  color: var(--dark-red) !important;
+}

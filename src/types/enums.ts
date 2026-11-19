@@ -3,4 +3,5 @@ export enum eColors {
   YELLOW = "yellow",
   PEACH = "peach",
   RED = "red",
+  DRED = "darkRed",
 }
