@@ -54,18 +54,47 @@
   width: 10px;
 }
 
+/* header ascii */
+.ascii {
+  white-space: pre;
+  line-height: 1.32; /* hand measured line height to get all the block right */
+  background: linear-gradient(90deg,
+    #d70000 0%,
+    #ff5f00 26%,
+    #ffaf00 50%,
+    #ffd7af 70%,
+    transparent 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  overflow-x: hidden;
+}
+
 /* menu */
 .menu {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.menu .logo {
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+.menu-left .logo {
   font-weight: bold;
   font-size: 18px;
   margin-right: 1rem;
 }
-.menu button {
+.menu-left button {
   margin-right: 1rem;
+  color: var(--dark-red);
+}
+.menu-right button {
+  margin-right: 3px; /* to cover the shadow */
   color: var(--dark-red);
 }
 
@@ -144,4 +173,41 @@ button.darkRed {
 }
 .fdarkRed {
   color: var(--dark-red) !important;
+}
+
+/* Visibility by screen size: xs < 576, s < 768, m < 992, l < 1200, xl >= 1200 (px) */
+/* show-* only displays within its range and preserves the element's display type */
+@media (width < 576px) {
+  .hide-xs { display: none !important; }
+}
+@media (width >= 576px) {
+  .show-xs { display: none !important; }
+}
+
+@media (576px <= width < 768px) {
+  .hide-s { display: none !important; }
+}
+@media (width < 576px), (width >= 768px) {
+  .show-s { display: none !important; }
+}
+
+@media (768px <= width < 992px) {
+  .hide-m { display: none !important; }
+}
+@media (width < 768px), (width >= 992px) {
+  .show-m { display: none !important; }
+}
+
+@media (992px <= width < 1200px) {
+  .hide-l { display: none !important; }
+}
+@media (width < 992px), (width >= 1200px) {
+  .show-l { display: none !important; }
+}
+
+@media (width >= 1200px) {
+  .hide-xl { display: none !important; }
+}
+@media (width < 1200px) {
+  .show-xl { display: none !important; }
 }

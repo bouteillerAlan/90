@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import ProgressBar from "./components/progressBar"
 import Menu from "./components/menu";
+import Header from "./components/header";
 
 function App() {
   const [spyStep, setSpyStep] = useState<number>(0);
@@ -45,6 +46,7 @@ function App() {
       {/* <div ref={cursorRef} className="cursor"></div> */}
       <div className="container">
         <Menu/>
+        <Header/>
       </div>
     </div>
   )

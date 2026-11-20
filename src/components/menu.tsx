@@ -15,19 +15,50 @@ export default function Menu() {
     { name: "About", color: eColors.PEACH, action: "" },
   ];
 
+  /**
+   * Render the logo with additional CSS classes
+   * @param classname - Additional CSS classes for the logo
+   * @returns The logo element
+   */
+  const logo = (classname: string) => {
+    return (
+      <p className={`jb logo ${classname}`}>
+        a2n
+        <span className={`f${eColors.YELLOW}`}>
+          _
+        </span>
+      </p>
+    )
+  }
+
   return (
-    <div className="menu">
-      <p className="jb logo">a2n<span className={`f${eColors.YELLOW}`}>_</span></p>
-      {menuLinks.map((link) => (
-        <Button className="jb" text={link.name} color={link.color} key={link.name}/>
-      ))}
-      <Button
-        className={`jb f${eColors.PEACH}`}
-        text={isDark ? "☀ Light" : "☾ Dark"}
-        color={eColors.DRED}
-        onClick={() => setIsDark((current) => !current)}
-      />
-    </div>
+    <>
+      <div className="menu hide-xs hide-s">
+        <div className="menu-left">
+          {logo("hide-xs hide-s")}
+          {menuLinks.map((link) => (
+            <Button className="jb" text={link.name} color={link.color} key={link.name}/>
+          ))}
+        </div>
+        <div className="menu-right">
+          <Button
+            className={`jb f${isDark ? eColors.PEACH : eColors.DRED}`}
+            text={isDark ? "☀ Light" : "☾ Dark"}
+            color={isDark ? eColors.DRED : eColors.PEACH}
+            onClick={() => setIsDark((current) => !current)}
+          />
+        </div>
+      </div>
+      <div>
+        {logo("hide-m hide-l hide-xl")}
+        <Button
+          className={`hide-m hide-l hide-xl jb f${isDark ? eColors.PEACH : eColors.DRED}`}
+          text={isDark ? "☀ Light" : "☾ Dark"}
+          color={isDark ? eColors.DRED : eColors.PEACH}
+          onClick={() => setIsDark((current) => !current)}
+        />
+      </div>
+    </>
   )
 }
 
